@@ -4,14 +4,17 @@ from django.shortcuts import render
 
 def index(request):
     context = {
-        'title': 'Home',
-        'content': 'Главная страница магазина - HOME',
-        'list': ['first', 'second'],
-        'dict': {'first': 1},
-        'is_authenticated': True
+        'title': 'Home - Главная',
+        'content': 'Магазин мебели HOME'
     }
 
     return render(request, 'main/index.html', context)
 
 def about(request):
-    return HttpResponse('About page')
+    context = {
+        'title': 'Home - О нас',
+        'content': 'О нас',
+        'text_on_page': 'Далеко-далеко, за словесными горами в стране гласных и согласных живут рыбные тексты. Безорфографичный предупреждал осталось пор диких. Рекламных ее предложения до бросил текст. Взгляд, рыбными над.'
+    }
+
+    return render(request, 'main/about.html', context)
