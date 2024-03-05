@@ -68,6 +68,13 @@ def profile(request):
 
     return render(request, 'users/profile.html', context=context)
 
+def users_cart(request):
+    context = {
+        'title': 'Home - Корзина',
+    }
+
+    return render(request, 'users/users_cart.html', context=context)
+
 @login_required
 def logout(request):
     messages.success(request, f'{request.user.username}, Вы вышли из аккаунта')
